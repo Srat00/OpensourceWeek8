@@ -1,24 +1,21 @@
 from typing import MutableSequence
 
 def sort3(a: MutableSequence, idx1: int, idx2: int, idx3: int):
-    """a[idx1], a[idx2], a[idx3]을 오름차순으로 정렬하고 가운데 값의 인덱스를 반환"""
     if a[idx2] < a[idx1]: a[idx2], a[idx1] = a[idx1], a[idx2]
     if a[idx3] < a[idx2]: a[idx3], a[idx2] = a[idx2], a[idx3]
     if a[idx2] < a[idx1]: a[idx2], a[idx1] = a[idx1], a[idx2]
     return idx2
 
 def insertion_sort(a: MutableSequence, left: int, right: int) -> None:
-    """a[left] ~ a[right]를 단순 삽입 정렬"""
     for i in range(left + 1, right + 1):
-        j = i
+        k = i
         tmp = a[i]
-        while j > 0 and a[j - 1] > tmp:
-            a[j] = a[j - 1]
-            j -= 1
-        a[j] = tmp
+        while k > 0 and a[k - 1] > tmp:
+            a[k] = a[k - 1]
+            k -= 1
+        a[k] = tmp
 
 def qsort(a: MutableSequence, left: int, right: int) -> None:
-    """a[left] ~ a[right]를 퀵 정렬"""
     if right - left < 9:            # 원소 수가 9개 미만이면 단순 삽입 정렬을 호출
         insertion_sort(a, left, right)
     else:                           # 원소 수가 9개 이상이면 퀵 정렬을 수행
@@ -42,7 +39,6 @@ def qsort(a: MutableSequence, left: int, right: int) -> None:
         if pl < right: qsort(a, pl, right)
 
 def quick_sort(a: MutableSequence) -> None:
-    """퀵 정렬"""
     qsort(a, 0, len(a) - 1)
 
 if __name__ == '__main__':

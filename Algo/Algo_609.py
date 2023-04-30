@@ -1,7 +1,6 @@
 from typing import MutableSequence
 
 def shell_sort(a: MutableSequence) -> None:
-    """셸 정렬(h * 3 + 1의 수열 사용)"""
     n = len(a)
     h = 1
 
@@ -10,12 +9,12 @@ def shell_sort(a: MutableSequence) -> None:
 
     while h > 0:
         for i in range(h, n):
-            j = i - h
+            k = i - h
             tmp = a[i]
-            while j >= 0 and a[j] > tmp:
-                a[j + h] = a[j]
-                j -= h
-            a[j + h] = tmp
+            while k >= 0 and a[k] > tmp:
+                a[k + h] = a[k]
+                k -= h
+            a[k + h] = tmp
         h //= 3
 
 if __name__ == '__main__':

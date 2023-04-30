@@ -3,9 +3,9 @@ from typing import MutableSequence
 def bubble_sort(a: MutableSequence):
     n=len(a)
     for i in range(n-1):
-        for j in range(n-1,i,-1):
-            if a[j-1]>a[j]:
-                a[j-1],a[j]=a[j],a[j-1]
+        for k in range(n-1,i,-1):
+            if a[k-1]>a[k]:
+                a[k-1],a[k]=a[k],a[k-1]
 
 if __name__=='__main__':
     print('버블 정렬을 수행합니다. ')

@@ -1,7 +1,6 @@
 from typing import MutableSequence
 
 def qsort(a: MutableSequence, left: int, right: int) -> None:
-    """a[left] ~ a[right]를 퀵 정렬"""
     pl = left                   # 왼쪽 커서
     pr = right                  # 오른쪽 커서
     x = a[(left + right) // 2]  # 피벗(가운데 요소)
@@ -18,7 +17,6 @@ def qsort(a: MutableSequence, left: int, right: int) -> None:
     if pl < right: qsort(a, pl, right)
 
 def quick_sort(a: MutableSequence) -> None:
-    """퀵 정렬"""
     qsort(a, 0, len(a) - 1)
 
 if __name__ == '__main__':

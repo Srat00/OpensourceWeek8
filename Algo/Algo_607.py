@@ -1,17 +1,14 @@
-# 단순 삽입 정렬 알고리즘 구현하기
-
 from typing import MutableSequence
 
 def insertion_sort(a: MutableSequence)->None:
-    """단순 삽입 정렬"""
     n=len(a)
     for i in range(1,n):
-        j=i
+        k=i
         tmp=a[i]
-        while j>0 and a[j-1]>tmp:
-            a[j]=a[j-1]
-            j-=1
-        a[j]=tmp
+        while k>0 and a[k-1]>tmp:
+            a[k]=a[k-1]
+            k-=1
+        a[k]=tmp
 
 if __name__== '__main__':
     print("단순 삽입 정렬을 수행합니다.")

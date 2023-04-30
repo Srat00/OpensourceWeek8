@@ -1,7 +1,6 @@
 from typing import MutableSequence
 
 def partition(a: MutableSequence) -> None:
-    """배열을 분할하여 출력"""
     n = len(a)
     pl = 0         # 왼쪽 커서
     pr = n - 1     # 오른쪽 커서

@@ -2,7 +2,6 @@ import turtle
 import random
 
 ## 클래스 선언 부분 ##
-
 class Shape:
     myTurtle=None
     cx,cy=0,0

@@ -7,14 +7,14 @@ def bubble_sort_verbose(a: MutableSequence):
     for i in range(n-1):
         exchng=0
         print(f'패스 {i+1}')
-        for j in range(n-1,i,-1):
+        for k in range(n-1,i,-1):
             for m in range(0,n-1):
-                print(f'{a[m]:2}' + ('  ' if m != j - 1 else ' +' if a[j-1]>a[j] else ' -'), end='')
+                print(f'{a[m]:2}' + ('  ' if m != k - 1 else ' +' if a[k-1]>a[k] else ' -'), end='')
             print(f'{a[n-1]:2}')
             ccnt+=1
-            if a[j-1]>a[j]:
+            if a[k-1]>a[k]:
                 scnt+=1
-                a[j-1],a[j]=a[j],a[j-1]
+                a[k-1],a[k]=a[k],a[k-1]
                 exchng+=1
         if exchng==0:
             break
